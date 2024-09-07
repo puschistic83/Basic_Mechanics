@@ -319,9 +319,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f13c905c1466364ab93c19db81dbe4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isAlive: 0
   _hp: 8
-  _maxhp: 10
-  MaxHp: 0
+  _maxHp: 10
   _textLive: {fileID: 985239167}
 --- !u!136 &64324647
 CapsuleCollider:
