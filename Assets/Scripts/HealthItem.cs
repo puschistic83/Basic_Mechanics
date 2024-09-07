@@ -9,15 +9,11 @@ public class HealthItem : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out LiveComponent liveComponent))
-        {
-            if (liveComponent.MaxHp == false)
+        {            
+            if (liveComponent.Live(_health))
             {
-                Debug.Log(_health);
-            liveComponent.Live(_health);
-            Destroy(gameObject);
-            }
-            
-            
+                Destroy(gameObject);
+            }            
         }       
     }
 }

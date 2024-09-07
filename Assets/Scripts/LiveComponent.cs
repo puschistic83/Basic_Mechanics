@@ -5,44 +5,35 @@ using UnityEngine;
 
 public class LiveComponent : MonoBehaviour
 {
+    [SerializeField] private bool _isAlive = true;
+
     [SerializeField] private int _hp;
-    [SerializeField] private int _maxhp;
-    public bool MaxHp;
+    [SerializeField] private int _maxHp;    
 
     [SerializeField] private TextMeshProUGUI _textLive;
 
+    
     private void Start()
     {
         _textLive.text = _hp.ToString();
     }
-
-    public void Live(int hp)
-    {        
-        if(_hp < _maxhp)
+      
+   public bool Live(int hp)
+    {
+        if (_isAlive == false)
         {
-            _hp += hp;
-            _textLive.text = _hp.ToString();
-            if (_hp > _maxhp)
-            {
-                _hp = _maxhp;
-            }
-        }        
+            return false;
+        }
+        if (_hp >= _maxHp)
+        {
+            return false;
+        }
+        _hp += hp;
+        return true;
     }
 
     public void Damage(int damage)
     {
         _hp -= damage;
-    }
-    
-    private void Update()
-    {
-        if (_hp >= _maxhp)
-        {
-            MaxHp = true;
-        }
-        else
-        {
-            MaxHp = false;
-        }
-    }
+    }    
 }
