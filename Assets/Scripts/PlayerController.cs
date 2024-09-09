@@ -3,17 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
-{
-    [SerializeField] private Animator _animator;
+{    
     [SerializeField] private float _speedRotate;
 
     public static bool _move;
-
-    private void Start()
-    {
-        _animator = GetComponent<Animator>();
-    }
-
+    
     private void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
