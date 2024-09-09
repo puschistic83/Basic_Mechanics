@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f8eab02156067a54796c51dd9303b308
+guid: bf75d910936b131428eeaf1260160676
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -19,8 +19,8 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Inbetween bone
       rotation in copied configuration does not match rotation in animation file:\n\t'Base
-      HumanSpine3' : rotation error = 3.017009 deg\n\t'Base HumanLCollarbone' : rotation
-      error = 20.387774 deg\n\t'Base HumanRCollarbone' : rotation error = 6.874483
+      HumanSpine3' : rotation error = 2.990951 deg\n\t'Base HumanLCollarbone' : rotation
+      error = 11.839460 deg\n\t'Base HumanRCollarbone' : rotation error = 7.633110
       deg\n"
     animationImportErrors: 
     animationImportWarnings: "\nClip 'mixamo.com' has import animation warnings that
@@ -43,23 +43,23 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Dwarf Idle
+      name: Dying Backwards
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 210
+      lastFrame: 138
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
-      loopBlendOrientation: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
       loopBlendPositionY: 1
       loopBlendPositionXZ: 0
-      keepOriginalOrientation: 1
+      keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0

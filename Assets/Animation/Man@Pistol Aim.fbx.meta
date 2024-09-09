@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f8eab02156067a54796c51dd9303b308
+guid: b666541dcb95bed4e9b8ac8f12affc0b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -19,8 +19,8 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Inbetween bone
       rotation in copied configuration does not match rotation in animation file:\n\t'Base
-      HumanSpine3' : rotation error = 3.017009 deg\n\t'Base HumanLCollarbone' : rotation
-      error = 20.387774 deg\n\t'Base HumanRCollarbone' : rotation error = 6.874483
+      HumanSpine3' : rotation error = 5.287312 deg\n\t'Base HumanLCollarbone' : rotation
+      error = 21.537172 deg\n\t'Base HumanRCollarbone' : rotation error = 28.074308
       deg\n"
     animationImportErrors: 
     animationImportWarnings: "\nClip 'mixamo.com' has import animation warnings that
@@ -43,11 +43,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Dwarf Idle
+      name: Pistol Aim
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 210
+      lastFrame: 213
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -56,10 +56,10 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
-      loopBlendOrientation: 1
-      loopBlendPositionY: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
       loopBlendPositionXZ: 0
-      keepOriginalOrientation: 1
+      keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0

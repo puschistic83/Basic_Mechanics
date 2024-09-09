@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f8eab02156067a54796c51dd9303b308
+guid: 5fe37422c82cb2b4a8c9fdf30ec2dc8c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -19,17 +19,15 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Inbetween bone
       rotation in copied configuration does not match rotation in animation file:\n\t'Base
-      HumanSpine3' : rotation error = 3.017009 deg\n\t'Base HumanLCollarbone' : rotation
-      error = 20.387774 deg\n\t'Base HumanRCollarbone' : rotation error = 6.874483
+      HumanSpine3' : rotation error = 2.039577 deg\n\t'Base HumanLCollarbone' : rotation
+      error = 9.922236 deg\n\t'Base HumanRCollarbone' : rotation error = 12.023879
       deg\n"
     animationImportErrors: 
     animationImportWarnings: "\nClip 'mixamo.com' has import animation warnings that
       might lower retargeting quality:\nNote: Activate translation DOF on avatar
       to improve retargeting quality.\n\t'Base HumanSpine3' is inbetween humanoid
       transforms and has rotation animation that will be discarded.\n\t'Base HumanLCollarbone'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Base
-      HumanRCollarbone' is inbetween humanoid transforms and has rotation animation
-      that will be discarded.\n"
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -43,11 +41,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Dwarf Idle
+      name: Pistol Run
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 210
+      lastFrame: 22
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -56,10 +54,10 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
-      loopBlendOrientation: 1
-      loopBlendPositionY: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
       loopBlendPositionXZ: 0
-      keepOriginalOrientation: 1
+      keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0

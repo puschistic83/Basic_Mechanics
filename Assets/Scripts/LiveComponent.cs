@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class LiveComponent : MonoBehaviour
 {
-    [SerializeField] private bool _isAlive = true;
+    public static bool _isAlive = true;
+    public static bool HitDamage = false; 
 
     [SerializeField] private int _hp;
     [SerializeField] private int _maxHp;    
@@ -29,11 +30,28 @@ public class LiveComponent : MonoBehaviour
             return false;
         }
         _hp += hp;
+        if (_hp >= _maxHp)
+        {
+            _hp = _maxHp;
+        }
+        _textLive.text = _hp.ToString();
         return true;
     }
 
     public void Damage(int damage)
-    {
+    {           
         _hp -= damage;
-    }    
+        _textLive.text = _hp.ToString();
+        if (_hp <= 0)
+        {
+            _isAlive = false;
+        }
+        HitDamage = true;
+        Invoke("Hit", 0.5f);
+    }
+    public void Hit()
+    {
+        HitDamage = false;
+    }
+
 }
