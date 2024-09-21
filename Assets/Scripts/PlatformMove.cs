@@ -20,7 +20,7 @@ public class PlatformMove : MonoBehaviour
         transform.Translate(moveObject * _speedPlatform * Time.deltaTime);
         var targetPosition = transform.position;
 
-        targetPosition.x = Mathf.Clamp(transform.position.x, -6, 6);
+        targetPosition.x = Mathf.Clamp(transform.position.x, _left, _right);
         transform.position = targetPosition;
     }
 }

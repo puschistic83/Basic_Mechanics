@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Coins : MonoBehaviour
+public class CoinsManager : MonoBehaviour
 {
     [SerializeField] private int _coin;
     [SerializeField] private int _scene;
