@@ -34,11 +34,16 @@ public class SpawnBricks : MonoBehaviour
     }
     public void PlaceBrick()
     {
-        
+        _brickWidth = Mathf.Clamp(_brickWidth, 0.9f, 1.5f);
+        _brickHeit = Mathf.Clamp(_brickHeit, 0.3f, 1f);
+        if (_brickWidth > 1)
+        {
+            _brickInRow = 8;
+        }
         for (int i = 0; i < _brickInRow; i++)
         {
             float xPositionBrick = _currentBrickRow * _brickWidth;
-            float yPositionBrick = _currentRow * _brickWidth;
+            float yPositionBrick = _currentRow * _brickHeit;
 
             var newBrick = Instantiate(_brick, point.position + new Vector3(xPositionBrick * 1.2f, yPositionBrick * -0.6f, 0), Quaternion.identity);
             newBrick.GetComponent<Renderer>().material.color = _currentCollor;
