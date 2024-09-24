@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(AudioSource))]
 public class ScoreManager : MonoBehaviour
 {    
-    private int _coinVictory;
-    private int _currentCoints;
+    private int _scoreVictory;
+    private int _currentScore;
     
     [SerializeField] private AudioClip _audioClip;
     private AudioSource _audioSource;  
@@ -16,21 +16,18 @@ public class ScoreManager : MonoBehaviour
 
     private void Start()
     {
-        _audioSource = GetComponent<AudioSource>();        
+        _audioSource = GetComponent<AudioSource>();
+        _scoreVictory = SpawnBricks.CointVictory;
     }
-
-    private void Update()
+        
+    public void ScoreBricks()
     {
-        _coinVictory = SpawnBricks.CointVictory;
-        if (_currentCoints >= _coinVictory && _coroutine == false)
+        _currentScore++;
+
+        if (_currentScore >= _scoreVictory && _coroutine == false)
         {
             StartCoroutine(LoadSceneUp());
         }
-
-    }
-    public void CoinTarget()
-    {
-        _currentCoints++;        
     }    
     IEnumerator LoadSceneUp()
     {

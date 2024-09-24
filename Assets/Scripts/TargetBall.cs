@@ -19,10 +19,10 @@ public class TargetBall : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<Target>())
+        if (collision.gameObject.GetComponent<BrickMarker>())
         {
            Destroy(collision.gameObject);
-            _cointTarget.CoinTarget();
+            _cointTarget.ScoreBricks();
             _audioSource.PlayOneShot(_clipTarget);
         }
         _audioSource.PlayOneShot(_clip);

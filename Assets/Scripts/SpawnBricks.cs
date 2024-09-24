@@ -22,7 +22,7 @@ public class SpawnBricks : MonoBehaviour
     public static int CointVictory;
 
     
-    private void Start()
+    private void Awake()
     {
         for (int i = 0; i < _colors.Length; i++)
         {
@@ -45,7 +45,8 @@ public class SpawnBricks : MonoBehaviour
             float xPositionBrick = _currentBrickRow * _brickWidth;
             float yPositionBrick = _currentRow * _brickHeit;
 
-            var newBrick = Instantiate(_brick, point.position + new Vector3(xPositionBrick * 1.2f, yPositionBrick * -0.6f, 0), Quaternion.identity);
+            var spawnPosition = point.position + new Vector3(xPositionBrick * 1.2f, yPositionBrick * -0.6f, 0);
+            var newBrick = Instantiate(_brick, spawnPosition, Quaternion.identity);
             newBrick.transform.parent = point.transform;
             newBrick.GetComponent<Renderer>().material.color = _currentCollor;
             _currentBrickRow++;
