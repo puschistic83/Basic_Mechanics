@@ -5,10 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class SpawnActiveBall : MonoBehaviour
 {
-    [SerializeField] private SpawnBall _spawnBall;
+    private SpawnBall _spawnBall;
 
     [SerializeField] private AudioClip _clip;
-    [SerializeField] private AudioSource _audioSource;
+    private AudioSource _audioSource;
 
     private void Start()
     {

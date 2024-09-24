@@ -7,7 +7,7 @@ using UnityEngine.TextCore.Text;
 public class SpawnBricks : MonoBehaviour
 {
     [SerializeField] private GameObject _brick;
-    public Transform point;
+    [SerializeField] Transform point;
     
     [SerializeField] private Color[] _colors;
 
@@ -46,6 +46,7 @@ public class SpawnBricks : MonoBehaviour
             float yPositionBrick = _currentRow * _brickHeit;
 
             var newBrick = Instantiate(_brick, point.position + new Vector3(xPositionBrick * 1.2f, yPositionBrick * -0.6f, 0), Quaternion.identity);
+            newBrick.transform.parent = point.transform;
             newBrick.GetComponent<Renderer>().material.color = _currentCollor;
             _currentBrickRow++;
 

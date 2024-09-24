@@ -5,9 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Ball : MonoBehaviour
 {    
-    [SerializeField] private bool _startBall = false;
-    
-    [SerializeField] private Rigidbody _rigidbody;
+    private bool _startBall = false;    
+    private Rigidbody _rigidbody;
+
     [SerializeField] private float _force;
 
     private void Start()

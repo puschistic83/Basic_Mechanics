@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(AudioSource))]
-public class CoinsManager : MonoBehaviour
+public class ScoreManager : MonoBehaviour
 {    
-    [SerializeField] private int _coinVictory;
-    [SerializeField] private int _currentCoints;
+    private int _coinVictory;
+    private int _currentCoints;
     
     [SerializeField] private AudioClip _audioClip;
-    [SerializeField] private AudioSource _audioSource;  
+    private AudioSource _audioSource;  
 
     private bool _coroutine = false;
 
@@ -22,15 +22,15 @@ public class CoinsManager : MonoBehaviour
     private void Update()
     {
         _coinVictory = SpawnBricks.CointVictory;
-
         if (_currentCoints >= _coinVictory && _coroutine == false)
-        {            
-            StartCoroutine(LoadSceneUp());                      
+        {
+            StartCoroutine(LoadSceneUp());
         }
+
     }
     public void CoinTarget()
     {
-        _currentCoints++;
+        _currentCoints++;        
     }    
     IEnumerator LoadSceneUp()
     {
