@@ -121,9 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3df6d06da03941a4c83558f4eae1c859, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startBall: 0
-  _rigidbody: {fileID: 0}
-  _force: 12
+  _force: 13
 --- !u!54 &-152744944437885080
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -163,10 +161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edef613dc20348c468f9efac15fdf094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cointTarget: {fileID: 0}
   _clip: {fileID: 8300000, guid: 717beccc4c015ae4b853978e70b9e4d1, type: 3}
   _clipTarget: {fileID: 8300000, guid: b50456f1e19f69340b7838243ce7c45e, type: 3}
-  _audioSource: {fileID: 0}
 --- !u!82 &2855573103118380683
 AudioSource:
   m_ObjectHideFlags: 0
