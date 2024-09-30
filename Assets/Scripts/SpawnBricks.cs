@@ -6,12 +6,14 @@ using UnityEngine.TextCore.Text;
 
 public class SpawnBricks : MonoBehaviour
 {
+    [SerializeField] private ColorBrickData _colorBrickData;
+
     [SerializeField] private GameObject _brick;
     [SerializeField] Transform point;
     
-    [SerializeField] private Color[] _colors;
+    private Color[] _colors;
+    private int _brickInRow;
 
-    [SerializeField] private int _brickInRow;
     [SerializeField] private float _brickWidth = 1;
     [SerializeField] private float _brickHeit = 0.5f;
 
@@ -24,6 +26,10 @@ public class SpawnBricks : MonoBehaviour
     
     private void Awake()
     {
+        _colors = _colorBrickData.Colors;
+        _brickInRow = _colorBrickData.BrickRow;
+        _brickInRow = Mathf.Clamp(_brickInRow, 1, 11);
+
         for (int i = 0; i < _colors.Length; i++)
         {
             _currentCollor = _colors[i];
@@ -32,6 +38,7 @@ public class SpawnBricks : MonoBehaviour
 
         CointVictory = _brickInRow * _colors.Length;
     }
+
     public void PlaceBrick()
     {
         _brickWidth = Mathf.Clamp(_brickWidth, 0.9f, 1.5f);
