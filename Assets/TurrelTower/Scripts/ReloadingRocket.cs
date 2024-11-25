@@ -13,7 +13,7 @@ public class ReloadingRocket : MonoBehaviour
     private int _pointSpawnIndex;
     public bool _chargedTurrel;
 
-    private PoolRocket _pool;
+    private ObjectPool _pool;
     private int _poolRocket;
 
     private FireRocket _fireRocket;
@@ -21,7 +21,7 @@ public class ReloadingRocket : MonoBehaviour
     private void Start()
     {
         _curerentRocket = _totalRocket;
-        _pool = GetComponent<PoolRocket>();
+        _pool = GameObject.FindObjectOfType<ObjectPool>();
         StartCoroutine(ReloadingStart());        
         _fireRocket = GetComponent<FireRocket>();
     }   
@@ -29,9 +29,10 @@ public class ReloadingRocket : MonoBehaviour
     private IEnumerator ReloadingStart()
     {
         while (_curerentRocket > 0)
-        {
+        {            
             yield return new WaitForSeconds(_reloadTime);
-            var Rocket = _pool.GetFreeElement();           
+            GameObject prefabRocket = _pool.prefabs[0];
+            var Rocket = _pool.GetObject(prefabRocket);           
             Rocket.transform.position = _pointsSpawn[_pointSpawnIndex].position;
             Rocket.transform.rotation = _pointsSpawn[_pointSpawnIndex].rotation;
             Rocket.transform.parent = _pointsSpawn[_pointSpawnIndex].transform;

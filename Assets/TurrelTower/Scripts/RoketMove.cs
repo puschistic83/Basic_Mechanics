@@ -8,16 +8,13 @@ public class RoketMove : MonoBehaviour
     [SerializeField] private float _timeLive = 7;
     [SerializeField] private GameObject _effectFire;    
 
-    private PoolObject _poolObject;
+    private ObjectPool _pool;
     private ReloadingRocket _reloadingRocket;
-
-    private PoollExplossion _poollExplossion;
-    
+      
     private void Start()
     {
         _reloadingRocket = GameObject.FindAnyObjectByType<ReloadingRocket>();
-        _poolObject = GetComponent<PoolObject>();
-        _poollExplossion = GameObject.FindAnyObjectByType<PoollExplossion>();
+        _pool = GameObject.FindAnyObjectByType<ObjectPool>();       
     }
 
     private void OnEnable()
@@ -44,8 +41,9 @@ public class RoketMove : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        OnDestroy();        
-        var Explossion = _poollExplossion.GetFreeElement();
+        OnDestroy();
+        GameObject prefabExplossion = _pool.prefabs[1];
+        var Explossion = _pool.GetObject(prefabExplossion);        
         Explossion.transform.position = transform.position;
         Explossion.transform.rotation = transform.rotation;
     }
@@ -54,7 +52,8 @@ public class RoketMove : MonoBehaviour
     {           
         GetComponent<RoketMove>().enabled = false;
         _effectFire.SetActive(false);        
-        _reloadingRocket.RocketInPool();        
-        _poolObject.ReturnToPool();
+        _reloadingRocket.RocketInPool();
+        GameObject prefabRocket = _pool.prefabs[0];
+        _pool.ReturnObject(prefabRocket, gameObject);
     }
 }

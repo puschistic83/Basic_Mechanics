@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Explossion : MonoBehaviour
 {
-    private PoolObject _poolObject;
+    private ObjectPool _poolObject;
     [SerializeField] private float _timeExplossion = 6;
 
     private void Start()
     {
-        _poolObject = GetComponent<PoolObject>();
+        _poolObject = GameObject.FindObjectOfType<ObjectPool>();
     }
 
     private void OnEnable()
@@ -22,7 +22,8 @@ public class Explossion : MonoBehaviour
         _timeExplossion -= Time.deltaTime;
         if ( _timeExplossion < 0 )
         {
-            _poolObject.ReturnToPool();
+            GameObject prefabExplossion = _poolObject.prefabs[1];
+            _poolObject.ReturnObject(prefabExplossion, gameObject);
         }
     }   
 }
